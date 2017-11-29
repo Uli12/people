@@ -1,0 +1,25 @@
+<body class="card-panel grey lighten-3">
+<h1 class="blue-text">All the Friends</h1>
+
+<% if @people.any? %>
+<div class="row">
+  <% @people.each do |person| %>
+  <div class="col s4">
+    <div class="card small blue-grey darken-1">
+      <div class="card-content">
+        <h4><%= link_to person.first_name + " " + person.last_name, person_path(person) %></h4>
+        <h6><%= link_to person.movie_quote %></h6>
+        <h5 class="white-text">Check me out!</h5>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+</div>
+
+<% else %>
+  <h4>No profiles. Please create a new profile.</h4>
+<% end %>
+
+<%= link_to 'Create New Profile', new_person_path %>
+</body>

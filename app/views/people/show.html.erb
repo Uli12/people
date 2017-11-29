@@ -1,0 +1,20 @@
+<body class="card-panel blue lighten-3">
+<h2><%= "Hi. I'm " + @person.first_name + "!"%></h2>
+
+<h3>About Me</h3>
+<h4>
+<%= "My name is " + @person.first_name + " " + @person.last_name %>
+</h4>
+<br_/>
+<h5>
+<p><%= "I'm " + "#{@person.age}" + "." %> </p>
+<%= "A little something about me. My favorite movie quote is: " + @person.movie_quote %>
+</h5>
+
+<%= link_to 'Edit', edit_person_path(@person), class: "btn waves-effect waves-light" %>
+<%= link_to 'Delete', person_path(@person),
+    method: :delete,
+    data: { confirm: "Are you sure?" }, class: "btn waves-effect waves-light"
+%>
+<%= link_to "Back to All Friends", people_path , class: "btn waves-effect waves-light"%>
+</body>

@@ -1,0 +1,33 @@
+<body class="card-panel grey lighten-3">
+  <h1>
+  Edit: <%= @person.first_name + " " + @person.last_name %>
+  </h1>
+
+  <hr />
+    <%= form_for @person do |f| %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+      <br />
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, required: true %>
+      <br />
+      <%= f.label :age %>
+      <%= f.text_field :age, required: true %>
+      <br />
+      <%= f.label :career %>
+      <%= f.text_field :career, required: false %>
+      <br />
+      <%= f.check_box :single %>
+      <%= f.label :single %>
+      <br />
+      <%= f.label :movie_quote %>
+      <%= f.text_area :movie_quote, required: true %>
+      <br />
+      <%= f.submit class: "btn waves-effect waves-light" %>
+      
+
+    <% end %>
+  <br />
+  <%= link_to 'Cancel', person_path(@person), class: "btn waves-effect waves-light" %>
+</body>
+
